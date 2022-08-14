@@ -1,4 +1,4 @@
-@Library('shared-library@master') _
+@Library('shared-library@main') _
 singleWarBuild{
     ecrRepoName = 'reg/myapp'
     targetPom = 'pom.xml'
