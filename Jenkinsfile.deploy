@@ -1,24 +1,24 @@
-def mavenHome = "/opt/maven/bin/mvn"
-def mavenSettings = "${env.JENKINS_HOME}/settings.xml"
+// def mavenHome = "/opt/maven/bin/mvn"
+// def mavenSettings = "${env.JENKINS_HOME}/settings.xml"
 
-node("worker_docker_slave"){
-    stage('Checkout scm'){
-        checkout scm
-    }
+// node("worker_docker_slave"){
+//     stage('Checkout scm'){
+//         checkout scm
+//     }
 
-    stage("Build"){
-        sh "ls -la"
-        sh "${mavenHome} -gs ${mavenSettings} -f pom.xml clean install"
-        sh "ls -la"
-    }
+//     stage("Build"){
+//         sh "ls -la"
+//         sh "${mavenHome} -gs ${mavenSettings} -f pom.xml clean install"
+//         sh "ls -la"
+//     }
 
-    stage("push artifacts"){
-        withCredentials([usernamePassword(credentialsId: 'JfrogJenkins', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-            sh "curl -X PUT -u ${USER}:${PASS} -T target/myapp-0.0.8-SNAPSHOT.war https://shubhamdevopscloud.jfrog.io/artifactory/code-libs-snapshot/myapp-0.0.8-SNAPSHOT.war"
-        }
-    }
+//     stage("push artifacts"){
+//         withCredentials([usernamePassword(credentialsId: 'JfrogJenkins', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+//             sh "curl -X PUT -u ${USER}:${PASS} -T target/myapp-0.0.8-SNAPSHOT.war https://shubhamdevopscloud.jfrog.io/artifactory/code-libs-snapshot/myapp-0.0.8-SNAPSHOT.war"
+//         }
+//     }
 
-    stage("Input"){
-        input("APRROVE PLEASE")
-    }
-}
+//     stage("Input"){
+//         input("APRROVE PLEASE")
+//     }
+// }
