@@ -1,6 +1,6 @@
 @Library('shared-library@main') _
 singleWarBuild{
-    ecrRepoName = 'reg/myapp'
+    ecrRepoName = 'myapp'
     targetPom = 'pom.xml'
     dockerFile = 'DockerServiceDescription/Dockerfile'
     
