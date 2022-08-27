@@ -2,6 +2,6 @@
 singleWarBuild{
     ecrRepoName = 'myapp'
     targetPom = 'pom.xml'
-    dockerFile = 'DockerServiceDescription/Dockerfile'
+    dockerFile = 'DockerTomcat/Dockerfile'
     
 }
