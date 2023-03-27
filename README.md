@@ -1,4 +1,4 @@
-# This is a single monolythic project
+# This is a monolythic CI project
 
 This will run the Jenkinsfile file in jenkins job which will trigger a function from the below shared library.
 
